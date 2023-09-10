@@ -1,0 +1,97 @@
+//Ý 1
+// Khai báo kiểu dữ liệu Non-Nullable
+  int nonNullableInt = 10;
+  double nonNullableDouble = 10.0;
+  String nonNullableString = "Hello";
+  bool nonNullableBool = true;
+  List<int> nonNullableList = [1, 2, 3];
+  Map<String, int> nonNullableMap = {"a": 1, "b": 2};
+
+  // Khai báo kiểu dữ liệu Nullable
+  int? nullableInt = null;
+  double? nullableDouble = 3.14;
+  String? nullableString = null;
+  bool? nullableBool = true;
+  List<int>? nullableList = [1, 2, 3];
+  Map<String, int>? nullableMap = {"a": 1, "b": 2};
+
+  // Khai báo kiểu dữ liệu dynamic và var
+  dynamic dynamicVariable = "Dynamic";
+  var varVariable = 10;
+
+//Ý 2
+void main1() {
+  print(Class.staticVariable); 
+
+  // Final
+  final int finalVariable = 10;
+  print(finalVariable);
+
+  // Late 
+  late int lateVariable;
+  lateVariable = 20;
+  print(lateVariable);
+
+  // Const 
+  const int constVariable = 30;
+  print(constVariable);
+}
+
+class Class {
+  static int staticVariable = 5;
+}
+
+//Ý 3
+int TinhGiaiThua(int n) {
+  if (n == 0) {
+    return 1;
+  } 
+
+    return n * TinhGiaiThua(n - 1);
+  
+}
+
+void main() {
+  int n = 6;
+  
+  int GiaiThua = TinhGiaiThua(n);
+  
+  print("Giai thừa của $n = $GiaiThua");
+}
+
+
+//Ý 4
+void main2() {
+  String strNumber = "123";
+  int intNumber = stringToInt(strNumber);
+  double doubleNumber = stringToDouble(strNumber);
+
+  print("String to int: $intNumber");
+  print("String to double: $doubleNumber");
+
+  intNumber = 10;
+  doubleNumber = 10.0;
+  String strFromInt = intToString(intNumber);
+  String strFromDouble = doubleToString(doubleNumber);
+
+  print("Int to string: $strFromInt");
+  print("Double to string: $strFromDouble");
+}
+
+int stringToInt(String str) {
+  return int.parse(str);
+}
+
+double stringToDouble(String str) {
+  return double.parse(str);
+}
+
+String intToString(int number) {
+  return number.toString();
+}
+
+String doubleToString(double number) {
+  return number.toString();
+}
+
+
